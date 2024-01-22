@@ -23,7 +23,7 @@ namespace HoroscopeApp
         {
             title = new Label
             {
-                Text = "Кто ты по гороскопу?",
+                Text = "Horoskoop",
                 TextColor = Color.Black,
                 FontSize = 30,
                 HorizontalOptions = LayoutOptions.Center,
@@ -31,13 +31,13 @@ namespace HoroscopeApp
 
             task1 = new Label
             {
-                Text = "У тебя есть два варианта узнать о себе: отметь на календарике своё день рождение...",
+                Text = "Valige oma sünnipäeva kuupäev: ",
                 FontSize = 24
             };
 
             task2 = new Label
             {
-                Text = "ИЛИ впиши свой знак зодиака: ",
+                Text = "Kirjutage oma sodiaagimärk: ",
                 FontSize = 24
             };
 
@@ -55,13 +55,13 @@ namespace HoroscopeApp
             editor = new Editor
             {
                 TextColor = Color.Black,
-                Placeholder = "Введи свой знак",
+                Placeholder = "Sisestage oma sodiaagimärk",
             };
             editor.Completed += Editor_Completed;
 
             info = new Label
             {
-                Text = "Здесь появиться информация",
+                Text = "Teave kuvatakse siin",
                 FontSize = 28, 
                 BackgroundColor = Color.LightGray
             };
@@ -90,82 +90,95 @@ namespace HoroscopeApp
             var d = e.NewDate.Day;
             if (m==1 && d>1 && d<=20 || m==12 && d>=22)
             {
-                info.Text = "Козерог" + 
-                    "\n Козероги почувствуют освобождение, разрушатся тяжелые оковы ответственности и напряженности. " +
-                    "Вы найдете место для радости и удовольствий, а не только для забот и работы.";
+                info.Text = "Kaljukits" +
+                    "\n 22. Detsember – 21. Jaanuar" +
+                    "\n Kaljukitsed tunnevad end vabanenuna, vastutuse ja pingete rasked köidikud murtakse. " +
+                    "Leiad koha rõõmudele ja naudingutele, mitte ainult muredele ja tööle.";
                 img.Content = new Image { Source = "kozerog.jpg" };
             }
             else if (m == 1 && d >= 20 && d <= 31 || m == 2 && d >= 1 && d <= 18)
             {
-                info.Text = "Водолей" + 
-                    "\n Важный год наступает для Водолеев – он будет звать на подвиги. В 2023 году закладывайте фундамент для изменений в будущем.";
+                info.Text = "Veevalaja" +
+                    "\n21. Jaanuar – 19. Veebruar" +
+                    "\n Veevalaja jaoks on tulemas tähtis aasta – see nõuab vägitegusid. 2023. aastal pange alus muudatustele tulevikus.";
                 img.Content = new Image { Source = "vodolei.jpg" };
             }
             else if (m == 2 && d >= 19 && d <= 29 || m == 3 && d >= 1 && d <= 20)
             {
-                info.Text = "Рыбы" + 
-                    "\n Рыбы ждет необычный год. Вы будете склонны к уединению. Необходимо избирательно подходить к выбору круга общения.";
+                info.Text = "Kalad" +
+                    "\n19. Veebruar – 20. Märts" +
+                    "\n Kalasid ootab ees ebatavaline aasta. Oled altid üksindusele. Oma suhtlusringkonna valimisel tuleb olla valiv.";
                 img.Content = new Image { Source = "rqbqjpg.jpg" };
             }
             else if (m == 3 && d >= 21 && d <= 31 || m == 4 && d >= 1 && d <= 19)
             {
-                info.Text = "Овен" +
-                    "\n Для Овнов 2023 год станет довольно важным временем. Вам необходимо " +
-                    "будет окончательно определиться с собственными позициями и мнениями касаемо всех сфер.";
+                info.Text = "Jäär" +
+                    "\n20. Märts – 21. Aprill" +
+                    "\n Jäära jaoks on 2023. aasta üsna oluline aeg. Sa vajad " +
+                    "otsustavad lõpuks ise oma seisukohad ja arvamused kõigis valdkondades.";
                 img.Content = new Image { Source = "oven.jpg" };
             }
             else if (m == 4 && d >= 21 && d <= 30 || m == 5 && d >= 1 && d <= 20)
             {
-                info.Text = "Телец" + 
-                    "\n Изменения которые Тельцы запустили когда-то давно наконец-то дадут свои плоды." +
-                    " Вы сможете подстроиться под новые обстоятельства и достигнуть больших успехов в работе.";
+                info.Text = "Sõnn" +
+                    "\n21. Aprill – 22. Mai" +
+                    "\n Muutused, mille Sõnn juba ammu käivitas, kannavad lõpuks vilja." +
+                    " Suudad kohaneda uute oludega ja saavutad oma töös suurt edu.";
                 img.Content = new Image { Source = "telec.jpg" };
             }
             else if (m == 5 && d >= 21 && d <= 31 || m == 6 && d >= 1 && d <= 20)
             {
-                info.Text = "Близнецы" + 
-                    "\n В 2023 году вам должно стать легче. Во всех сферах жизни появится больше стабильности и ясности.";
+                info.Text = "Kaksikud" +
+                    "\n22. Mai – 22. Juuni" +
+                    "\n Aastal 2023 peaksid asjad teie jaoks lihtsamaks minema. Kõigis eluvaldkondades on rohkem stabiilsust ja selgust.";
                 img.Content = new Image { Source = "bliznecq.jpg" };
             }
             else if (m == 6 && d >= 21 && d <= 30 || m == 7 && d >= 1 && d <= 22)
             {
-                info.Text = "Рак" +
-                    "\n Раков можно поздравить! В 2022 году вы прошли большой путь трансформаций в " +
-                    "сфере личных взаимоотношений: избавились от ненужных людей и обрели хороших друзей." +
-                    " В 2023 году вы будете чувствовать себя свободно и появится желание встряхнуться и начать что-то новое.";
+                info.Text = "Vähk" +
+                    "\n22. Juuni – 23. Juuli" +
+                    "\n Õnnitlused Vähkidele! Aastal 2022 olete läbinud pika ümberkujunemise teekonna " +
+                    "isiklike suhete sfäär: vabanes ebavajalikest inimestest ja leidis häid sõpru." +
+                    " Aastal 2023 tunnete end vabalt ja teil on soov asju raputada ja midagi uut alustada.";
                 img.Content = new Image { Source = "rak.jpg" };
             }
             else if (m == 7 && d >= 23 && d <= 31 || m == 8 && d >= 1 && d <= 22)
             {
-                info.Text = "Лев" + 
-                    "\n Львам предстоит пережить краеугольный год с большими изменениями. У вас будет шанс раскрыться и показать себя миру, " +
-                    "но будьте осторожны и следите за эмоциями и ментальным здоровьем.";
+                info.Text = "Lõvi" +
+                    "\n23. Juuli – 24. August" +
+                    "\n Lõvidel on ees pöördeline suurte muutustega aasta. Sul on võimalus end avada ja maailmale näidata, " +
+                    "kuid ole ettevaatlik ja jälgi oma emotsioone ja vaimset tervist.";
                 img.Content = new Image { Source = "lev.jpg" };
             }
             else if (m == 8 && d >= 23 && d <= 31 || m == 9 && d >= 1 && d <= 22)
             {
-                info.Text = "Дева" + 
-                    "\n Девам 2023 год принесет много значительных событий. Вы внезапно можете стать для себя мерилом нравственности и вектором духовности. " +
-                    "Окружающие будут воспринимать вас, как опору и лидера.";
+                info.Text = "Neitsi" +
+                    "\n24. August – 23. September" +
+                    "\n Neitside jaoks toob 2023. aasta palju märkimisväärseid sündmusi. Sinust võib ootamatult saada omaenda moraalistandard ja vaimsuse vektor. " +
+                    "Teie ümber olevad inimesed tajuvad teid toe ja juhina.";
                 img.Content = new Image { Source = "deva.jpg" };
             }
             else if (m == 9 && d >= 23 && d <= 30 || m == 10 && d >= 1 && d <= 22)
             {
-                info.Text = "Весы" + 
-                    "\n Весам в 2023 году может казаться, что всё вокруг скучно – боритесь с этим и раскрашивайте рутину. " +
-                    "Вы будете считать, что кому-то везет больше вас. Поработайте над ответственностью и собранностью.";
+                info.Text = "Kaallud" +
+                    "\n23. September – 23. Oktoober" +
+                    "\n 2023. aastal võivad Kaalud tunda, et kõik nende ümber on igav – võitle sellega ja värvi rutiini. " +
+                    "Arvate, et kellelgi on rohkem õnne kui sina. Töötage selle nimel, et olla vastutustundlik ja kogutud.";
                 img.Content = new Image { Source = "vesq.jpg" };
             }
             else if (m == 10 && d >= 23 && d <= 31 || m == 11 && d >= 1 && d <= 21)
             {
-                info.Text = "Скорпион" + "\n Для Скорпионов наступает счастливый и наполненный мощными энергиями год.";
+                info.Text = "Skorpion" +
+                    "\n23. Oktoober – 23. November" +
+                    "\n Skorpionide jaoks on tulemas õnnelik aasta, mis on täis võimsaid energiaid.";
                 img.Content = new Image { Source = "skorpion.jpg" };
             }
             else if (m == 11 && d >= 22 && d <= 30 || m == 12 && d >= 1 && d <= 21)
             {
-                info.Text = "Стрелец" + 
-                    "\n Стрельцов будет влечь жажда развлечений – захочется праздника жизни. " +
-                    "Приходит время действовать по творческому импульсу, а не подчиняться кому-то.";
+                info.Text = "Ambur" +
+                    "\n23. November – 22. Detsember" +
+                    "\n Amburid tõmbab ligi meelelahutusjanu – nad tahavad elu tähistamist. " +
+                    "On aeg tegutseda loomingulise impulsi alusel ja mitte kellelegi alluda.";
                 img.Content = new Image { Source = "strelec.jpg" };
             }
 
@@ -174,89 +187,102 @@ namespace HoroscopeApp
         private void Editor_Completed(object sender, EventArgs e)
         {
             enter = editor.Text;
-            if (enter == "Козерог" || enter == "козерог")
+            if (enter == "Kaljukits" || enter == "kaljukits")
             {
-                info.Text = "Козерог" +
-                    "\n Козероги почувствуют освобождение, разрушатся тяжелые оковы ответственности и напряженности. " +
-                    "Вы найдете место для радости и удовольствий, а не только для забот и работы.";
+                info.Text = "Kaljukits" + 
+                    "\n 22. Detsember – 21. Jaanuar" +
+                    "\n Kaljukitsed tunnevad end vabanenuna, vastutuse ja pingete rasked köidikud murtakse. " +
+                    "Leiad koha rõõmudele ja naudingutele, mitte ainult muredele ja tööle.";
                 img.Content = new Image { Source = "kozerog.jpg" };
             }
-            else if (enter == "Водолей" || enter == "водолей")
+            else if (enter == "Veevalaja" || enter == "veevalaja")
             {
-                info.Text = "Водолей" +
-                    "\n Важный год наступает для Водолеев – он будет звать на подвиги. В 2023 году закладывайте фундамент для изменений в будущем.";
+                info.Text = "Veevalaja" +
+                    "\n21. Jaanuar – 19. Veebruar" +
+                    "\n Veevalaja jaoks on tulemas tähtis aasta – see nõuab vägitegusid. 2023. aastal pange alus muudatustele tulevikus.";
                 img.Content = new Image { Source = "vodolei.jpg" };
             }
-            else if (enter == "Рыбы" || enter == "рыбы")
+            else if (enter == "Kalad" || enter == "kalad")
             {
-                info.Text = "Рыбы" +
-                    "\n Рыбы ждет необычный год. Вы будете склонны к уединению. Необходимо избирательно подходить к выбору круга общения.";
+                info.Text = "Kalad" +
+                    "\n19. Veebruar – 20. Märts" +
+                    "\n Kalasid ootab ees ebatavaline aasta. Oled altid üksindusele. Oma suhtlusringkonna valimisel tuleb olla valiv.";
                 img.Content = new Image { Source = "rqbqjpg.jpg" };
             }
-            else if (enter == "Овен" || enter == "овен")
+            else if (enter == "Jäär" || enter == "jäär")
             {
-                info.Text = "Овен" +
-                       "\n Для Овнов 2023 год станет довольно важным временем. Вам необходимо " +
-                       "будет окончательно определиться с собственными позициями и мнениями касаемо всех сфер.";
+                info.Text = "Jäär" +
+                       "\n20. Märts – 21. Aprill" +
+                       "\n Jäära jaoks on 2023. aasta üsna oluline aeg. Peate lõpuks  " +
+                       "otsustama oma seisukohtade ja arvamuste üle kõigis valdkondades.";
                 img.Content = new Image { Source = "oven.jpg" };
             }
-            else if (enter == "Телец" || enter == "телец")
+            else if (enter == "Sõnn" || enter == "sõnn")
             {
-                info.Text = "Телец" +
-                    "\n Изменения которые Тельцы запустили когда-то давно наконец-то дадут свои плоды." +
-                    " Вы сможете подстроиться под новые обстоятельства и достигнуть больших успехов в работе.";
+                info.Text = "Sõnn" +
+                    "\n21. Aprill – 22. Mai" +
+                    "\n Muutused, mille Sõnn juba ammu käivitas, kannavad lõpuks vilja." +
+                    " Suudad kohaneda uute oludega ja saavutad oma töös suurt edu.";
                 img.Content = new Image { Source = "telec.jpg" };
             }
-            else if (enter == "Близнецы" || enter == "близнецы")
+            else if (enter == "Kaksikud" || enter == "kaksikud")
             {
-                info.Text = "Близнецы" +
-                       "\n В 2023 году вам должно стать легче. Во всех сферах жизни появится больше стабильности и ясности.";
+                info.Text = "Kaksikud" +
+                    "\n22. Mai – 22. Juuni" +
+                    "\n Aastal 2023 peaksid asjad teie jaoks lihtsamaks minema. Kõigis eluvaldkondades on rohkem stabiilsust ja selgust.";
                 img.Content = new Image { Source = "bliznecq.jpg" };
             }
-            else if (enter == "Рак" || enter == "рак")
+            else if (enter == "Vähk" || enter == "vähk")
             {
-                info.Text = "Рак" +
-                     "\n Раков можно поздравить! В 2022 году вы прошли большой путь трансформаций в " +
-                     "сфере личных взаимоотношений: избавились от ненужных людей и обрели хороших друзей." +
-                     " В 2023 году вы будете чувствовать себя свободно и появится желание встряхнуться и начать что-то новое.";
+                info.Text = "Vähk" +
+                     "\n22. Juuni – 23. Juuli" +
+                     "\n Õnnitlused Vähkidele! Aastal 2022 olete läbinud pika ümberkujunemise teekonna " +
+                     "isiklike suhete sfäär: vabanes ebavajalikest inimestest ja leidis häid sõpru." +
+                     " Aastal 2023 tunnete end vabalt ja teil on soov asju raputada ja midagi uut alustada.";
                 img.Content = new Image { Source = "rak.jpg" };
             }
-            else if (enter == "Лев" || enter == "лев")
+            else if (enter == "Lõvi" || enter == "lõvi")
             {
-                info.Text = "Лев" +
-                   "\n Львам предстоит пережить краеугольный год с большими изменениями. У вас будет шанс раскрыться и показать себя миру, " +
-                   "но будьте осторожны и следите за эмоциями и ментальным здоровьем.";
+                info.Text = "Lõvi" +
+                   "\n23. Juuli – 24. August" +
+                   "\n Lõvidel on ees pöördeline suurte muutustega aasta. Sul on võimalus end avada ja maailmale näidata, " +
+                   "kuid ole ettevaatlik ja jälgi oma emotsioone ja vaimset tervist.";
                 img.Content = new Image { Source = "lev.jpg" };
             }
-            else if (enter == "Дева" || enter == "дева")
+            else if (enter == "Neitsi" || enter == "neitsi")
             {
-                info.Text = "Дева" +
-                    "\n Девам 2023 год принесет много значительных событий. Вы внезапно можете стать для себя мерилом нравственности и вектором духовности. " +
-                    "Окружающие будут воспринимать вас, как опору и лидера.";
+                info.Text = "Neitsi" +
+                    "\n24. August – 23. September" +
+                    "\n Neitside jaoks toob 2023. aasta palju märkimisväärseid sündmusi. Sinust võib ootamatult saada omaenda moraalistandard ja vaimsuse vektor. " +
+                    "Teie ümber olevad inimesed tajuvad teid toe ja juhina.";
                 img.Content = new Image { Source = "deva.jpg" };
             }
-            else if (enter == "Весы" || enter == "весы")
+            else if (enter == "Kaallud" || enter == "kaallud")
             {
-                info.Text = "Весы" +
-                       "\n Весам в 2023 году может казаться, что всё вокруг скучно – боритесь с этим и раскрашивайте рутину. " +
-                       "Вы будете считать, что кому-то везет больше вас. Поработайте над ответственностью и собранностью.";
+                info.Text = "Kaallud" +
+                     "\n23. September – 23. Oktoober" +
+                     "\n 2023. aastal võivad Kaalud tunda, et kõik nende ümber on igav – võitle sellega ja värvi rutiini. " +
+                     "Arvate, et kellelgi on rohkem õnne kui sina. Töötage selle nimel, et olla vastutustundlik ja kogutud.";
                 img.Content = new Image { Source = "vesq.jpg" };
             }
-            else if (enter == "Скорпион" || enter == "скорпион")
+            else if (enter == "Skorpion" || enter == "skorpion")
             {
-                info.Text = "Скорпион" + "\n Для Скорпионов наступает счастливый и наполненный мощными энергиями год.";
+                info.Text = "Skorpion" +
+                    "\n23. Oktoober – 23. November" + 
+                    "\n Skorpionide jaoks on tulemas õnnelik aasta, mis on täis võimsaid energiaid.";
                 img.Content = new Image { Source = "skorpion.jpg" };
             }
-            else if (enter == "Стрелец" || enter == "стрелец")
+            else if (enter == "Ambur" || enter == "ambur")
             {
-                info.Text = "Стрелец" +
-                    "\n Стрельцов будет влечь жажда развлечений – захочется праздника жизни. " +
-                    "Приходит время действовать по творческому импульсу, а не подчиняться кому-то.";
+                info.Text = "Ambur" +
+                    "\n23. November – 22. Detsember" +
+                    "\n Amburid tõmbab ligi meelelahutusjanu – nad tahavad elu tähistamist. " +
+                    "On aeg tegutseda loomingulise impulsi alusel ja mitte kellelegi alluda.";
                 img.Content = new Image { Source = "strelec.jpg" };
             }
             else
             {
-                info.Text = "Проверьте правильность написания";
+                info.Text = "Kontrollige, kas kõik on õige?";
             }
         }
     }
