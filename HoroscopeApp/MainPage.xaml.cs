@@ -41,7 +41,7 @@ namespace HoroscopeApp
                 FontSize = 24
             };
 
-
+            //
             calendar = new DatePicker
             {
                 Format = "D",
